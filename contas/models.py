@@ -23,3 +23,26 @@ class Transacao(models.Model):
 
 
 
+class Curso(models.Model):
+    nome = models.CharField(max_length=200)
+    carga_horaria = models.IntegerField()
+    dt_criacao = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.nome
+
+
+class Aluno(models.Model):
+    nome = models.CharField(max_length=200)
+    email = models.EmailField()
+    dt_criacao = models.DateTimeField(auto_now_add=True)
+    curso = models.ManyToManyField(Curso)
+
+    def __str__(self):
+        return self.nome
+
+
+
+
+
+
