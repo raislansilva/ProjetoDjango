@@ -36,7 +36,7 @@ class Aluno(models.Model):
     nome = models.CharField(max_length=200)
     email = models.EmailField()
     dt_criacao = models.DateTimeField(auto_now_add=True)
-    curso = models.ManyToManyField(Curso)
+    cursos = models.ManyToManyField(Curso)
 
     def __str__(self):
         return self.nome

@@ -26,8 +26,9 @@ def novaTrasacao(request):
 
 def listagem(request):
     data = {}
-    data['transacoes'] = Transacao.objects.all()
+    data['transacoes'] = Curso.objects.all()
     return render(request, 'contas/listagem.html', data)
+
 
 def update(request, pk):
     data = {}
@@ -40,6 +41,7 @@ def update(request, pk):
     data['form'] = form
     data['transacao'] = transacao
     return render(request, 'contas/form.html', data)
+
 
 def delete(request, pk):
     transacao = Transacao.objects.get(pk=pk)

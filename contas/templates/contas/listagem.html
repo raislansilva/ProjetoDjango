@@ -10,8 +10,13 @@
 <br>
     <h2>Listagem</h2>
     <ul>
-        {% for transacao in transacoes %}
-           <li><a href="{% url 'url_update' transacao.id %}">{{ transacao.descricao }} - {{transacao.data}} - {{transacao.valor}} - {{transacao.categoria}}</a></li>
+        {% for curso in transacoes %}
+           <li>{{curso.nome}}</li>
+           <ul>
+               {% for aluno in curso.aluno_set.all %}
+                  <li>{{aluno.nome}}</li>
+               {% endfor %}
+           </ul>
         {% endfor %}
     </ul>
 
@@ -26,12 +31,26 @@
 </html>
 
 
-<!--{% for transacao in transacoes %}
-          {% for cursos in transacao.curso.all %}
-             <li>{{cursos.nome}}</li>
-          {% endfor %}
+<!--{% for aluno in transacoes %}
+           <li>{{aluno.nome}}</li>
+           <ul>
+               {% for cursos in aluno.cursos.all %}
+                 <li>{{cursos.nome}}</li>
+               {% endfor %}
+           </ul>
 {% endfor %}-->
 
 <!--{% for transacao in transacoes %}
            <li><a href="{% url 'url_update' transacao.id %}">{{ transacao.descricao }} - {{transacao.data}} - {{transacao.valor}} - {{transacao.categoria}}</a></li>
 {% endfor %}-->
+
+
+<!--{% for curso in transacoes %}
+           <li>{{curso.nome}}</li>
+           <ul>
+               {% for aluno in curso.aluno_set.all %}
+                  <li>{{aluno.nome}}</li>
+               {% endfor %}
+           </ul>
+{% endfor %}-->
+

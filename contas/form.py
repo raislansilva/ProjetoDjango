@@ -15,7 +15,7 @@ class CategoriaForm(ModelForm):
 class AlunoForm(ModelForm):
     class Meta:
         model = Aluno
-        fields = ['nome', 'email', 'curso']
+        fields = ['nome', 'email', 'cursos']
 
 
 class CursoForm(ModelForm):
